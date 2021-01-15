@@ -3,7 +3,7 @@ import { Customers } from "./Customers";
 import { Header } from "./Header";
 import { MobileMenu } from "./MobileMenu";
 
-export function Hero() {
+export function Hero({ demoImgUrl }: { demoImgUrl?: string }) {
   return (
     <>
       <div className="bg-gray-50">
@@ -40,7 +40,7 @@ export function Hero() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <img
                 className="relative rounded-lg shadow-lg"
-                src={DEMO_HERO_IMG_URL}
+                src={demoImgUrl || DEMO_HERO_IMG_URL}
                 alt="App screenshot"
               />
             </div>
