@@ -1,2 +1,2 @@
 [template.environment]
-  DEMO_HERO_IMG_URL = "https://tailwindui.com/img/component-images/top-nav-with-multi-column-layout-screenshot.jpg"
+  DEMO_HERO_IMG_URL = "DEMO_HERO_IMG_URL"
