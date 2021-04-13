@@ -3,7 +3,13 @@ import { Customers } from "./Customers";
 import { Header } from "./Header";
 import { MobileMenu } from "./MobileMenu";
 
-export function Hero({ demoImgUrl }: { demoImgUrl?: string }) {
+export function Hero({
+  demoImgUrl,
+  demoVideoUrl,
+}: {
+  demoImgUrl?: string;
+  demoVideoUrl?: string;
+}) {
   return (
     <>
       <div className="bg-gray-50">
@@ -38,11 +44,22 @@ export function Hero({ demoImgUrl }: { demoImgUrl?: string }) {
               <div className="flex-1 w-full bg-gray-800"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <img
-                className="relative rounded-lg shadow-lg"
-                src={demoImgUrl || DEMO_HERO_IMG_URL}
-                alt="App screenshot"
-              />
+              {demoVideoUrl ? (
+                <video
+                  className="relative rounded-lg shadow-lg"
+                  loop
+                  autoPlay
+                  muted
+                >
+                  <source src={demoVideoUrl} type="video/webm" />
+                </video>
+              ) : (
+                <img
+                  className="relative rounded-lg shadow-lg"
+                  src={demoImgUrl || DEMO_HERO_IMG_URL}
+                  alt="App screenshot"
+                />
+              )}
             </div>
           </div>
         </div>
