@@ -3,6 +3,8 @@ import { Customers } from "./Customers";
 import { Header } from "./Header";
 import { MobileMenu } from "./MobileMenu";
 
+const localDemoVideoUrl = process.env.DEMO_HERO_IMG_URL;
+
 export function Hero({
   demoImgUrl,
   demoVideoUrl,
@@ -44,14 +46,17 @@ export function Hero({
               <div className="flex-1 w-full bg-gray-800"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              {demoVideoUrl ? (
+              {demoVideoUrl || localDemoVideoUrl ? (
                 <video
                   className="relative rounded-lg shadow-lg"
                   loop
                   autoPlay
                   muted
                 >
-                  <source src={demoVideoUrl} type="video/webm" />
+                  <source
+                    src={demoVideoUrl || localDemoVideoUrl}
+                    type="video/webm"
+                  />
                 </video>
               ) : (
                 <img

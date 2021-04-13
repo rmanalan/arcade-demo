@@ -1,2 +1,3 @@
 [template.environment]
   DEMO_HERO_IMG_URL = "DEMO_HERO_IMG_URL"
+  DEMO_HERO_VIDEO_URL = "DEMO_HERO_VIDEO_URL"
